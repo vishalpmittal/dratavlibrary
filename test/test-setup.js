@@ -1,6 +1,6 @@
 const models = require('../src/models');
-const booksData = require('../test-books.json');
-const authorsData = require('../test-authors.json');
+const booksData = require('./test-data/books-sample.json');
+const authorsData = require('./test-data/authors-sample.json');
 
 module.exports = async function setupTestDB() {
   await models.sequelize.sync({ force: true });
