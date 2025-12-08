@@ -1,0 +1,26 @@
+{
+  "name": "dratavlibrary",
+  "version": "0.1.0",
+  "description": "DrataVLibrary - Book tracking application",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest --runInBand"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mysql2": "^3.3.0",
+    "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
+    "jest": "^29.6.1",
+    "supertest": "^6.3.4",
+    "sqlite3": "^5.1.6",
+    "nodemon": "^2.0.22"
+  }
+}

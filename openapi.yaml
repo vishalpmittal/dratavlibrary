@@ -1,0 +1,81 @@
+openapi: 3.0.3
+info:
+  title: DrataVLibrary API
+  version: 1.0.0
+paths:
+  /dratavlibrary/books:
+    get:
+      summary: List books (paginated)
+      parameters:
+        - in: query
+          name: page
+          schema: { type: integer }
+        - in: query
+          name: limit
+          schema: { type: integer }
+        - in: query
+          name: search
+          schema: { type: string }
+        - in: query
+          name: author
+          schema: { type: string }
+      responses:
+        '200':
+          description: paginated list
+    post:
+      summary: Create book
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: created
+  /dratavlibrary/books/{id}:
+    get:
+      summary: Get a book
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: book
+    put:
+      summary: Update a book
+    delete:
+      summary: Delete a book
+  /dratavlibrary/books/{id}/checkout:
+    post:
+      summary: Checkout a book
+  /dratavlibrary/books/{id}/return:
+    post:
+      summary: Return a book
+  /dratavlibrary/authors:
+    get:
+      summary: List authors (paginated)
+      parameters:
+        - in: query
+          name: page
+          schema: { type: integer }
+        - in: query
+          name: limit
+          schema: { type: integer }
+        - in: query
+          name: search
+          schema: { type: string }
+        - in: query
+          name: book
+          schema: { type: string }
+    post:
+      summary: Create author
+  /dratavlibrary/authors/{id}:
+    get:
+      summary: Get author
+    put:
+      summary: Update author
+    delete:
+      summary: Delete author

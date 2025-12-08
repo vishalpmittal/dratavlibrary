@@ -1,0 +1,77 @@
+[
+  {
+    "firstName": "Alice",
+    "lastName": "Walker",
+    "books": [1, 5, 12]
+  },
+  {
+    "firstName": "Brian",
+    "lastName": "Sanders",
+    "books": [2, 9]
+  },
+  {
+    "firstName": "Carla",
+    "lastName": "Nguyen",
+    "books": [3, 10, 18, 22]
+  },
+  {
+    "firstName": "David",
+    "lastName": "Stone",
+    "books": [4]
+  },
+  {
+    "firstName": "Elena",
+    "lastName": "Rossi",
+    "books": [6, 13]
+  },
+  {
+    "firstName": "Farid",
+    "lastName": "Khan",
+    "books": [7, 14]
+  },
+  {
+    "firstName": "Grace",
+    "lastName": "Miller",
+    "books": [8]
+  },
+  {
+    "firstName": "Hiro",
+    "lastName": "Tanaka",
+    "books": [11, 19]
+  },
+  {
+    "firstName": "Isabella",
+    "lastName": "Costa",
+    "books": [15]
+  },
+  {
+    "firstName": "Jonas",
+    "lastName": "Lindberg",
+    "books": [16]
+  },
+  {
+    "firstName": "Kara",
+    "lastName": "Patel",
+    "books": [17]
+  },
+  {
+    "firstName": "Liam",
+    "lastName": "OConnor",
+    "books": [20]
+  },
+  {
+    "firstName": "Mina",
+    "lastName": "Sorensen",
+    "books": [21]
+  },
+  {
+    "firstName": "Noah",
+    "lastName": "Park",
+    "books": [23, 25]
+  },
+  {
+    "firstName": "Olivia",
+    "lastName": "Chen",
+    "books": [24, 26]
+  }
+]

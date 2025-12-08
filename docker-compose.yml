@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: dratavlibrary
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+  app:
+    build: .
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASS: password
+      DB_NAME: dratavlibrary
+      DB_DIALECT: mysql
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+volumes:
+  db-data:
