@@ -8,6 +8,9 @@ async function createBook(req, res) {
   if (errors.length) return res.status(400).json({ error: 'Invalid payload', details: errors });
 
   const { title, pageCount, releaseDate, author } = req.body;
+  // prevent duplicate book titles
+  const existing = await Book.findOne({ where: { title } });
+  if (existing) return res.status(409).json({ error: 'Book already exists', book: { id: existing.id, title: existing.title } });
   let authorInstance = null;
   if (author && author.firstName && author.lastName) {
     authorInstance = await Author.findOne({ where: { firstName: author.firstName, lastName: author.lastName } });
@@ -16,9 +19,18 @@ async function createBook(req, res) {
     }
   }
 
-  const book = await Book.create({ title, pageCount, releaseDate, authorId: authorInstance ? authorInstance.id : req.body.authorId });
-  const result = await Book.findByPk(book.id, { include: { model: Author, as: 'author' } });
-  return res.status(201).json(result);
+  try {
+    const book = await Book.create({ title, pageCount, releaseDate, authorId: authorInstance ? authorInstance.id : req.body.authorId });
+    const result = await Book.findByPk(book.id, { include: { model: Author, as: 'author' } });
+    return res.status(201).json(result);
+  } catch (err) {
+    // handle unique constraint from DB as a fallback
+    if (err && (err.name === 'SequelizeUniqueConstraintError' || err.name === 'SequelizeUniqueConstraintViolationError')) {
+      const existing2 = await Book.findOne({ where: { title } });
+      return res.status(409).json({ error: 'Book already exists', book: existing2 ? { id: existing2.id, title: existing2.title } : null });
+    }
+    throw err;
+  }
 }
 
 async function getBooks(req, res) {

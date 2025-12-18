@@ -110,4 +110,17 @@ describe('Books API', () => {
     logger.append({ testFile: __filename, testName: 'Delete non-existing book', input: { url }, output: { status: res.status, body: res.body } });
     expect(res.status).toBe(404);
   });
+
+  test('Creating duplicate book returns 409', async () => {
+    const url = '/dratavlibrary/books';
+    const payload = { title: 'Duplicate Test Book', pageCount: 111, author: { firstName: 'Dup', lastName: 'Tester' } };
+    const r1 = await request(app).post(url).send(payload);
+    logger.append({ testFile: __filename, testName: 'Create duplicate - first create', input: { url, body: payload }, output: { status: r1.status, body: r1.body } });
+    expect(r1.status).toBe(201);
+
+    const r2 = await request(app).post(url).send(payload);
+    logger.append({ testFile: __filename, testName: 'Create duplicate - second create', input: { url, body: payload }, output: { status: r2.status, body: r2.body } });
+    expect(r2.status).toBe(409);
+    expect(r2.body).toHaveProperty('error', 'Book already exists');
+  });
 });
