@@ -1,7 +1,7 @@
 {
-  "name": "dratavlibrary",
+  "name": "vibelibrary",
   "version": "0.1.0",
-  "description": "DrataVLibrary - Book tracking application",
+  "description": "vibelibrary - Book tracking application",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",

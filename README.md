@@ -1,4 +1,4 @@
-# DrataVLibrary
+# vibelibrary
 
 A simple Node.js + MySQL book tracking application.
 
@@ -28,16 +28,16 @@ docker-compose up --build
 
 The API will be available at `http://localhost:3000`.
 
-API root path prefix: `/dratavlibrary`
+API root path prefix: `/vibelibrary`
 
 Examples:
-- `POST /dratavlibrary/books` - create a new book with payload
+- `POST /vibelibrary/books` - create a new book with payload
     ```
     {"title":"Unit Test Book","pageCount":123,"releaseDate":"2025-01-01T00:00:00.000Z","author":{"firstName":"Test","lastName":"Author"}}
     ```
-- `GET /dratavlibrary/books?page=1&limit=10&search=Midnight` - paginated book list
-- `GET /dratavlibrary/authors?search=Alice` - paginated author list
-- `POST /dratavlibrary/books/:id/checkout` - checkout a book
+- `GET /vibelibrary/books?page=1&limit=10&search=Midnight` - paginated book list
+- `GET /vibelibrary/authors?search=Alice` - paginated author list
+- `POST /vibelibrary/books/:id/checkout` - checkout a book
 
 **Run Tests locally**
 
@@ -48,7 +48,7 @@ cd <application-folder>
 npm install --no-audit --no-fund
 npm test
 ```
-The test logs can be viewed at `dratavlibrary/test/logs/test.log`
+The test logs can be viewed at `vibelibrary/test/logs/test.log`
 
 
 **API Documentation**

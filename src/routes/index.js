@@ -4,7 +4,7 @@ const router = express.Router();
 const authors = require('./authors');
 const books = require('./books');
 
-router.use('/dratavlibrary/authors', authors);
-router.use('/dratavlibrary/books', books);
+router.use('/vibelibrary/authors', authors);
+router.use('/vibelibrary/books', books);
 
 module.exports = router;

@@ -1,0 +1,48 @@
+Book tracking application vibelibrary. Here are the requirements:
+
+1. tech stack should be in Node.js and MySQL
+
+2. Core Entities: 
+    a. Book:
+    {
+        id: number,
+        title: string,
+        author: Author,
+        pageCount: number,
+        createdAt: Date,
+        updatedAt: Date,
+        releaseDate: Date
+    }
+
+    b. Author:
+    {
+        firstName: string,
+        lastName: string,
+        createdAt: Date,
+        updatedAt: Date,
+        books: Book[]
+    }
+
+3. REST APIs:
+    a. CRUD API's for both the entities
+    b. REST endpoints should follow standards with naming and organization (vibelibrary)
+    c. all the REST responses must be paginated
+    d. Books and authors should be searchable via text in their names
+    e. Books should be searchable via author names 
+    f. Authors should be listed via book names
+    g. Checkout a book and return a book
+
+4. Testing 
+    a. unit test cases should be there for all CRUD operations for both entities 
+    b. Pagination unit tests should be present
+    c. use the test data from files test-authors.json and test-books.json 
+
+
+5. Deployment:
+    a. should be deployable via a docker container
+
+6. Documentation: 
+    a. Provide a readme.md file with: 
+	i. explanation of the code base, and
+	ii. docker run instructions to someone new
+    b. Swagger file with api definitions

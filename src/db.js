@@ -6,7 +6,7 @@ function createSequelize() {
   }
 
   const dialect = process.env.DB_DIALECT || 'mysql';
-  const database = process.env.DB_NAME || 'dratavlibrary';
+  const database = process.env.DB_NAME || 'vibelibrary';
   const username = process.env.DB_USER || 'root';
   const password = process.env.DB_PASS || 'password';
   const host = process.env.DB_HOST || '127.0.0.1';

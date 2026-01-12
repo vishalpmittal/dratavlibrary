@@ -33,7 +33,7 @@ async function start() {
 
     await models.sequelize.sync();
     app.listen(PORT, () => {
-      console.log(`DrataVLibrary listening on port ${PORT}`);
+      console.log(`vibelibrary listening on port ${PORT}`);
     });
   } catch (err) {
     console.error('Failed to start app', err);

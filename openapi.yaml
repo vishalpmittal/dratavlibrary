@@ -1,9 +1,9 @@
 openapi: 3.0.3
 info:
-  title: DrataVLibrary API
+  title: vibelibrary API
   version: 1.0.0
 paths:
-  /dratavlibrary/books:
+  /vibelibrary/books:
     get:
       summary: List books (paginated)
       parameters:
@@ -33,7 +33,7 @@ paths:
       responses:
         '201':
           description: created
-  /dratavlibrary/books/{id}:
+  /vibelibrary/books/{id}:
     get:
       summary: Get a book
       parameters:
@@ -48,13 +48,13 @@ paths:
       summary: Update a book
     delete:
       summary: Delete a book
-  /dratavlibrary/books/{id}/checkout:
+  /vibelibrary/books/{id}/checkout:
     post:
       summary: Checkout a book
-  /dratavlibrary/books/{id}/return:
+  /vibelibrary/books/{id}/return:
     post:
       summary: Return a book
-  /dratavlibrary/authors:
+  /vibelibrary/authors:
     get:
       summary: List authors (paginated)
       parameters:
@@ -72,7 +72,7 @@ paths:
           schema: { type: string }
     post:
       summary: Create author
-  /dratavlibrary/authors/{id}:
+  /vibelibrary/authors/{id}:
     get:
       summary: Get author
     put:
